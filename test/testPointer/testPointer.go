@@ -2,8 +2,8 @@ package main
 
 import "fmt"
 
-func ErrorPointer() {
-	fmt.Println("-------ErrorPointer--------")
+func errorPointer() {
+	fmt.Println("-------errorPointer--------")
 	var out []*int
 	for i := 0; i < 3; i++ {
 		out = append(out, &i)
@@ -12,8 +12,8 @@ func ErrorPointer() {
 	fmt.Println("Addresses:", out[0], out[1], out[2])
 }
 
-func TruePointer() {
-	fmt.Println("-------TruePointer--------")
+func truePointer() {
+	fmt.Println("-------truePointer--------")
 	var out []*int
 	for i := 0; i < 3; i++ {
 		// Make a copy of i because it will be reassigned with each loop.
@@ -25,6 +25,6 @@ func TruePointer() {
 }
 
 func main() {
-	ErrorPointer()
-	TruePointer()
+	errorPointer()
+	truePointer()
 }

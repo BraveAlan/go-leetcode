@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/BraveAlan/go-leetcode/dp"
 	"math"
 	"reflect"
+
+	"github.com/BraveAlan/go-leetcode/dp"
 )
 
 func main() {
@@ -18,7 +19,7 @@ func main() {
 	result := math.Min(1, 2)
 	fmt.Println(reflect.TypeOf(result))
 	fmt.Println(result)
-	coins := []int{1,9}
+	coins := []int{1, 9}
 	amount := 5
 	cnt := dp.CoinChange(coins, amount)
 	fmt.Println(cnt)

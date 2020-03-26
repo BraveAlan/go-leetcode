@@ -23,4 +23,7 @@ func main() {
 	amount := 5
 	cnt := dp.CoinChange(coins, amount)
 	fmt.Println(cnt)
+
+	test := []int{1, 2, 3}
+	fmt.Println(test[:2])
 }

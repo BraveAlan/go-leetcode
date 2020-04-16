@@ -36,7 +36,7 @@ func reverseListIteration(head *ListNode) *ListNode {
 	// p := head
 	// var pre *ListNode
 	// for p != nil {
-	// 	pre, p, p.Next = p, p.Next, pre
+	// 	pre, p, p.Next = p, p.Next, pre // 对这种写法的解释 https://www.cnblogs.com/TimLiuDream/p/9932494.html
 	// }
 	// return pre
 

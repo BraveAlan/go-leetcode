@@ -1,6 +1,9 @@
 package main
 
-import "math"
+import (
+	"fmt"
+	"math"
+)
 
 // Definition for a binary tree node.
 type TreeNode struct {
@@ -10,6 +13,8 @@ type TreeNode struct {
 }
 
 // 110. Balanced Binary Tree
+// 从顶到底，先判断当前节点是否平衡（分别求出左子树和右子树的高度，然后比较是否相差大于1）
+// 然后递归判断左右子树是否平衡
 func isBalanced(root *TreeNode) bool {
 	if root == nil {
 		return true
@@ -36,6 +41,7 @@ func max(x, y int) int {
 	return x
 }
 
+// 从底到顶返回节点的最大高度
 func isBalancedHelper(root *TreeNode) (bool, float64) {
 	if root == nil {
 		return true, -1
@@ -49,4 +55,25 @@ func isBalancedHelper(root *TreeNode) (bool, float64) {
 		return false, 0
 	}
 	return math.Abs(leftHeight-rightHeight) < 2, 1 + math.Max(leftHeight, rightHeight)
+}
+
+func maxDepth(root *TreeNode) (bool, float64) {
+	if root == nil {
+		return true, 0
+	}
+	leftIsBalanced, leftDepth := maxDepth(root.Left)
+	if !leftIsBalanced {
+		return false, 0
+	}
+	rightIsBalanced, rightDepth := maxDepth(root.Right)
+	if !rightIsBalanced {
+		return false, 0
+	}
+	return math.Abs(leftDepth-rightDepth) < 2, 1 + math.Max(leftDepth, rightDepth)
+}
+
+func main() {
+	var root TreeNode
+	maxDepth(&root)
+	fmt.Println(result)
 }

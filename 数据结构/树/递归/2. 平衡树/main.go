@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -70,10 +69,4 @@ func maxDepth(root *TreeNode) (bool, float64) {
 		return false, 0
 	}
 	return math.Abs(leftDepth-rightDepth) < 2, 1 + math.Max(leftDepth, rightDepth)
-}
-
-func main() {
-	var root TreeNode
-	maxDepth(&root)
-	fmt.Println(result)
 }

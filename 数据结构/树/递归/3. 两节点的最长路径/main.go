@@ -9,7 +9,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-// 543. Diameter of Binary Tree
+// 543. Diameter of Binary Tree (Easy)
 // 递归求每个结点的深度，同时，可以求出每个点的最大直径，再与当前最大直径进行比较，更新当前最大直径。
 func diameterOfBinaryTree(root *TreeNode) int {
 	m := 0

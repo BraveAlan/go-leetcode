@@ -45,8 +45,8 @@ func inorderTraversalRecursive(root *TreeNode) []int {
 func visit(root *TreeNode, nums *[]int) {
 	if root != nil {
 		visit(root.Left, nums)
-		visit(root.Right, nums)
 		*nums = append(*nums, root.Val)
+		visit(root.Right, nums)
 	}
 }
 

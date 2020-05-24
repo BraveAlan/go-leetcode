@@ -29,6 +29,5 @@ func findBottomLeftValue(root *TreeNode) int {
 				queue = append(queue, t.Right)
 			}
 		}
-
 	}
 }

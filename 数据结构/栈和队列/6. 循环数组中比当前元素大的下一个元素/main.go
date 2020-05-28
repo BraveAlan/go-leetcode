@@ -3,7 +3,7 @@ package main
 // 503. Next Greater Element II (Medium)
 func nextGreaterElements(nums []int) []int {
 	nextMax := make([]int, len(nums)) // 单调递减栈（从栈底到栈顶）
-	for i, _ := range nextMax {
+	for i := 0; i < len(nums); i++ {
 		nextMax[i] = -1
 	}
 	stack, length := []int{}, len(nums)
